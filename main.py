@@ -50,7 +50,9 @@ while instruction_pointer < len(program):
             print(chr(array[data_pointer]), end="")
             instruction_pointer += 1
         case ",":
-            array[data_pointer] = ord(input()[:1])
+            data = input()[:1]
+            if len(data) > 0:
+                array[data_pointer] = ord(data)
             instruction_pointer += 1
         case "[":
             if array[data_pointer] == 0:
